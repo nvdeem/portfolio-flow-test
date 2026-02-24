@@ -1,6 +1,6 @@
 import { test } from '@playwright/test';
-import { loadConfig } from '../src/config/loadConfig';
-import { SignInPage } from '../src/pages/signIn.page';
+import { loadConfig } from '../config/loadConfig';
+import { SignInPage } from '../pages/signIn.page';
 
 test('user can sign in', async ({ page }) => {
   const config = loadConfig();
