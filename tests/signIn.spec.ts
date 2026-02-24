@@ -1,4 +1,4 @@
-import { test } from '@playwright/test';
+import { expect, test } from '@playwright/test';
 import { loadConfig } from '../config/loadConfig';
 import { SignInPage } from '../pages/signIn.page';
 
@@ -14,4 +14,7 @@ test('user can sign in', async ({ page }) => {
 
   // Sign in using local config values.
   await signInPage.signIn(config.username, config.password);
+
+  // Assert /c is in URL.
+  await expect(page).toHaveURL(/\/c(?:\/|$|\?)/);
 });
